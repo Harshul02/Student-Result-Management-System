@@ -18,9 +18,9 @@ export default function StudentLogin() {
           <div className="position-absolute top-0 start-0 p-4 text-white">
             <h1 className="text-medium">Graphic Era (Deemed To Be) University</h1>
           </div>
-          <Form layout="vertical w-400 white p-4 mx-5" style={{ border: "1px solid #0000FF", background: "rgba(0, 0, 0, 0.6)", height: "450px"}}>
+          <Form layout="vertical w-400 white p-4 mx-5" style={{ border: "1px solid #0000FF", background: "rgba(0, 0, 0, 0.6)", height: "450px", width: "270px"}}>
             <hr style={{color: "#46c1dc"}}/>
-            <h1 className="text-medium fs-3 text-white">Student - Login</h1>
+            <h1 className="text-medium fs-3 text-white text-center">Student - Login</h1>
             <hr style={{color: "#46c1dc"}}/>
             <Form.Item name="employeeId" label={<label style={{ color: "white" }}>Student ID</label>}>
               <Input placeholder="Username"/>
