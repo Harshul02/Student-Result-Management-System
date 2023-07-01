@@ -20,7 +20,7 @@ function Login() {
           </div>
           <Form layout="vertical w-400 white p-4 mx-5" style={{ border: "1px solid #0000FF", background: "rgba(0, 0, 0, 0.6)", height: "450px"}}>
             <hr style={{color: "#46c1dc"}}/>
-            <h1 className="text-medium fs-3 text-white">Employee - Login</h1>
+            <h1 className="text-medium fs-3 text-white">Admin - Login</h1>
             <hr style={{color: "#46c1dc"}}/>
             <Form.Item name="employeeId" label={<label style={{ color: "white" }}>Employee ID</label>}>
               <Input placeholder="Username"/>
