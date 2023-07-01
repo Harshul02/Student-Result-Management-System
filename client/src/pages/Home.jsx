@@ -11,13 +11,16 @@ export default function Home() {
       className="d-flex align-items-center justify-content-center"
       style={{
         // backgroundImage: `url('https://shikshaview.com/wp-content/uploads/2020/05/graphic-era-1024x424.jpg')`,
-        background: `linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent), url('https://shikshaview.com/wp-content/uploads/2020/05/graphic-era-1024x424.jpg')`,
+        background: `linear-gradient(to right, rgba(0, 0, 0, 1), transparent), url('https://shikshaview.com/wp-content/uploads/2020/05/graphic-era-1024x424.jpg')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        opacity: 0.8,
+        opacity: 1,
         minHeight: '100vh',
       }}
     >
+    <div className="position-absolute top-0 start-0 p-4 text-white">
+            <h1 className="text-medium">Graphic Era (Deemed To Be) University</h1>
+          </div>
       <div className="container">
         <div className="row justify-content-between">
           <div className="col-md-5">
