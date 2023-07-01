@@ -1,9 +1,9 @@
 import axios from "axios";
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { ShowLoading, HideLoading } from "../redux/alerts.js";
-import { SetEmployee } from "../redux/employees.js";
-import DefaultLayout from "../components/DefaultLayout.js";
+import { ShowLoading, HideLoading } from "../redux/alerts";
+import { SetEmployee } from "../redux/employees";
+import DefaultLayout from "./DefaultLayout";
 import { useNavigate } from "react-router-dom";
 
 function ProtectedRoute(props) {
