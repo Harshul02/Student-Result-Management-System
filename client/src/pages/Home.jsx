@@ -35,7 +35,7 @@ export default function Home() {
               <img
                 className="card-img-top mx-2 my-4"
                 src="https://i.pinimg.com/originals/51/90/10/519010d9ee8167bfe445e616f260f758.png"
-                alt="Card image cap"
+                alt="Student"
                 style={{ maxWidth: '80%', maxHeight: '80%', objectFit: 'contain' }}
               />
               <div className="card-body text-center">
@@ -58,7 +58,7 @@ export default function Home() {
               <img
                 className="card-img-top mx-2 my-4"
                 src={admin}
-                alt="Card image cap"
+                alt="Admin"
                 style={{ maxWidth: '80%', maxHeight: '80%', objectFit: 'contain' }}
               />
               <div className="card-body text-center">
