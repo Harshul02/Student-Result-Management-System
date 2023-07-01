@@ -1,17 +1,21 @@
 import { Form, Input } from "antd";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
+import { HideLoading, ShowLoading } from "../../redux/alerts";
+import { useDispatch } from "react-redux";
 
 
 
 function Login() {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
     const onFinish = async (values) =>{
-        console.log(values);
         try{
+            dispatch(ShowLoading());
             const response = await axios.post("/api/employee/login", values);
+            dispatch(HideLoading());
             if(response.data.success)
             {
                 toast.success(response.data.message);
@@ -22,11 +26,14 @@ function Login() {
                 toast.error(response.data.message);
             }
         }catch(error){
+          dispatch(HideLoading());
             toast.error(error.message);
         }
     }
 
   return (
+    <>
+      <Toaster />
       <div
         className="primary d-flex align-items-center justify-content-end"
         style={{
@@ -57,6 +64,7 @@ function Login() {
           </Form>
         </div>
       </div>
+      </>
   );
 }
 
