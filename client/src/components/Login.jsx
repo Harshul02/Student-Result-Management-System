@@ -1,7 +1,31 @@
 import { Form, Input } from "antd";
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
+import axios from "axios";
+
+
 
 function Login() {
+    const navigate = useNavigate();
+    const onFinish = async (values) =>{
+        console.log(values);
+        try{
+            const response = await axios.post("/api/employee/login", values);
+            if(response.data.success)
+            {
+                toast.success(response.data.message);
+                localStorage.setItem("token", response.data.data);
+                navigate("/employee");
+            }
+            else{
+                toast.error(response.data.message);
+            }
+        }catch(error){
+            toast.error(error.message);
+        }
+    }
+
   return (
       <div
         className="primary d-flex align-items-center justify-content-end"
@@ -18,7 +42,7 @@ function Login() {
           <div className="position-absolute top-0 start-0 p-4 text-white">
             <h1 className="text-medium">Graphic Era (Deemed To Be) University</h1>
           </div>
-          <Form layout="vertical w-400 white p-4 mx-5" className="" style={{ border: "1px solid #0000FF", background: "rgba(0, 0, 0, 0.6)", height: "450px", width: "270px"}}>
+          <Form layout="vertical w-400 white p-4 mx-5" className="" style={{ border: "1px solid #0000FF", background: "rgba(0, 0, 0, 0.6)", height: "450px", width: "270px"}} onFinish={onFinish}>
             <hr style={{color: "#46c1dc"}}/>
             <h1 className="text-medium fs-3 text-white text-center">Admin - Login</h1>
             <hr style={{color: "#46c1dc"}}/>
