@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 function PageTitle({ title }) {
   const navigate = useNavigate();
   return (
-    <div className="px-1 d-flex gap-3 align-items-center mb-4">
+    <div className="px-1 d-flex gap-3 align-items-center mb-4 mt-3">
       <i
         className="ri-arrow-left-line"
         onClick={() => {

@@ -63,14 +63,15 @@ export default function Students() {
   return (
     <div>
         <PageTitle title="Students" />
-      <div className="d-flex justify-content-between align-items-center my-3">
+      <div className="d-flex justify-content-between align-items-center my-3 mx-3">
         <input
           type="text"
-          className="w-300 px-2"
+          className="w-300 px-2 form-control"
           placeholder="search students"
+          style={{width: "250px"}}
         />
         <button
-          className="primary text-white px-3"
+          className="btn btn-primary primary text-white px-3 mx-3"
           onClick={() => {
             navigate("/employee/students/add");
           }}
@@ -78,7 +79,9 @@ export default function Students() {
           Add Student
         </button>
       </div>
-      <Table columns={columns} dataSource={students}/>
+      <div className="table-responsive px-3">
+        <Table columns={columns} dataSource={students} />
+      </div>
     </div>
   )
 }
