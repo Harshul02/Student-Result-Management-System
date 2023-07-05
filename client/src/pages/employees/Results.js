@@ -6,6 +6,8 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { HideLoading, ShowLoading } from "../../redux/alerts";
+import { RiDeleteBinLine, RiPencilLine } from 'react-icons/ri';
+
 
 function Results() {
   const dispatch = useDispatch();
@@ -85,18 +87,22 @@ function Results() {
       key: "action",
       render: (text, record) => (
         <div className="d-flex gap-3">
-          <i
-            className="ri-delete-bin-line"
-            onClick={() => {
-              deleteStudent(record.rollNo);
-            }}
-          ></i>
-          <i
-            className="ri-pencil-line"
-            onClick={() => {
-              navigate(`/employee/results/edit/${record._id}`);
-            }}
-          ></i>
+        <span className="icon-wrapper">
+          <RiDeleteBinLine
+              size={18} 
+              onClick={() => {
+                deleteStudent(record.rollNo);;
+              }}
+            />
+            </span>
+            <span className="icon-wrapper">
+          <RiPencilLine
+              size={18} 
+              onClick={() => {
+                navigate(`/employee/results/edit/${record._id}`);
+              }}
+            />
+          </span>
         </div>
       ),
     },
