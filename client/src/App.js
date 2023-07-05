@@ -9,6 +9,7 @@ import EmployeeHome from './pages/employees/EmployeeHome';
 import Students from './pages/employees/Students';
 import AddStudent from './pages/employees/AddStudent';
 import EditStudent from './pages/employees/EditStudent';
+import Results from './pages/employees/Results';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/employee/students" element={<ProtectedRoute><Students /></ProtectedRoute>}/>
           <Route path="/employee/students/add" element={<ProtectedRoute><AddStudent /></ProtectedRoute>}/>
           <Route path="/employee/students/edit/:rollNo" element={<ProtectedRoute><EditStudent /></ProtectedRoute>}/>
+          <Route path="/employee/results" element={<ProtectedRoute><Results /></ProtectedRoute>}/>
           <Route path="/studentlogin" element={<StudentLogin />}/>
         </Routes>
       </BrowserRouter>
