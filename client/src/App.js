@@ -19,6 +19,7 @@ function App() {
           <Route path="/employee" element={<ProtectedRoute><EmployeeHome /></ProtectedRoute>}/>
           <Route path="/employee/students" element={<ProtectedRoute><Students /></ProtectedRoute>}/>
           <Route path="/employee/students/add" element={<ProtectedRoute><AddStudent /></ProtectedRoute>}/>
+          <Route path="/employee/students/edit/:rollNo" element={<ProtectedRoute><EditStudent /></ProtectedRoute>}/>
           <Route path="/studentlogin" element={<StudentLogin />}/>
         </Routes>
       </BrowserRouter>

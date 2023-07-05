@@ -6,6 +6,8 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { HideLoading, ShowLoading } from "../../redux/alerts";
+import { RiDeleteBinLine, RiPencilLine } from 'react-icons/ri';
+import "./student.css";
 
 export default function Students() {
   const dispatch = useDispatch();
@@ -23,6 +25,7 @@ export default function Students() {
           },
         }
       );
+      console.log(response);
       dispatch(HideLoading());
       if (response.data.success) {
         setStudents(response.data.data);
@@ -60,63 +63,67 @@ export default function Students() {
     }
   };
 
-
   useEffect(() => {
     getStudents();
   }, []);
 
-    const columns = [
-        {
-          title: "Class",
-          dataIndex: "class",
-          key: "class",
-        },
-        {
-          title: "Roll No",
-          dataIndex: "rollNo",
-          key: "rollNo",
-        },
-        {
-          title: "First Name",
-          dataIndex: "firstName",
-          key: "firstName",
-        },
-        {
-          title: "Last Name",
-          dataIndex: "lastName",
-          key: "lastName",
-        },
-        {
-          title: "Email",
-          dataIndex: "email",
-          key: "email",
-        },
-        {
-          title: "Phone Number",
-          dataIndex: "phoneNumber",
-          key: "phoneNumber",
-        },
-        {
-          title: "Action",
-          key: "action",
-          render: (text, record) => (
-            <div className="d-flex gap-3">
-              <i
-                className="ri-delete-bin-line"
-                onClick={() => {
-                  deleteStudent(record.rollNo);
-                }}
-              ></i>
-              <i
-                className="ri-pencil-line"
-                onClick={() => {
-                  navigate(`/employee/students/edit/${record.rollNo}`);
-                }}
-              ></i>
-            </div>
-          ),
-        },
-      ];
+  const columns = [
+    {
+      title: "Class",
+      dataIndex: "class",
+      key: "class",
+    },
+    {
+      title: "Roll No",
+      dataIndex: "rollNo",
+      key: "rollNo",
+    },
+    {
+      title: "First Name",
+      dataIndex: "firstName",
+      key: "firstName",
+    },
+    {
+      title: "Last Name",
+      dataIndex: "lastName",
+      key: "lastName",
+    },
+    {
+      title: "Email",
+      dataIndex: "email",
+      key: "email",
+    },
+    {
+      title: "Phone Number",
+      dataIndex: "phoneNumber",
+      key: "phoneNumber",
+    },
+    {
+      title: "Action",
+      key: "action",
+      render: (text, record) => (
+        <div className="d-flex gap-3">
+          <span className="icon-wrapper">
+            <RiDeleteBinLine
+              size={18} 
+              onClick={() => {
+                deleteStudent(record.rollNo);
+              }}
+            />
+          </span>
+          <span className="icon-wrapper">
+            <RiPencilLine
+              size={18} 
+              onClick={() => {
+                navigate(`/employee/students/edit/${record.rollNo}`);
+              }}
+            />
+          </span>
+        </div>
+      ),      
+    },
+  ];
+
   return (
     <div>
         <PageTitle title="Students" />
