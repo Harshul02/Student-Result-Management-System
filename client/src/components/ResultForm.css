@@ -1,0 +1,7 @@
+/* ResultForm.css */
+@media (max-width: 576px) {
+    .form-control {
+      width: 100%;
+    }
+  }
+  
