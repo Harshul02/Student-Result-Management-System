@@ -34,8 +34,7 @@ router.post("/get-all-students", authMiddleware, async (req, res) => {
   try {
     // const students = await Student.find(req?.body ? req.body : {});
     const students = await Student.find();
-    // console.log(req.body);
-    console.log(students);
+    
     res.status(200).send({
       message: "Students fetched successfully",
       success: true,

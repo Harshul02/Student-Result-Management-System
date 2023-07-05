@@ -54,7 +54,6 @@ router.post("/login", async (req,res) => {
 
 router.post("/get-employee-by-id", authMiddleware, async (req, res) => {
     try{
-        console.log(req.body);
         const employee = await Employee.findOne({
             _id: req.body.employeeId,
           });
