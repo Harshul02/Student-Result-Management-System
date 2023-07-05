@@ -1,12 +1,69 @@
-import React, {useState} from 'react';
+import React, { useEffect } from "react";
+import PageTitle from "../../components/PageTitle";
+import { useNavigate } from "react-router-dom";
 import { Table } from "antd";
-import { useNavigate } from 'react-router-dom';
-import PageTitle from '../../components/PageTitle';
+import axios from "axios";
+import toast from "react-hot-toast";
+import { useDispatch } from "react-redux";
+import { HideLoading, ShowLoading } from "../../redux/alerts";
 
 export default function Students() {
-    const navigate = useNavigate();
-    const [students, setStudents] = useState([]);
+  const dispatch = useDispatch();
+  const [students, setStudents] = React.useState([]);
+  const navigate = useNavigate();
+  const getStudents = async (values) => {
+    try {
+      dispatch(ShowLoading());
+      const response = await axios.post(
+        "/api/student/get-all-students",
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+      dispatch(HideLoading());
+      if (response.data.success) {
+        setStudents(response.data.data);
+      } else {
+        toast.error(response.data.message);
+      }
+    } catch (error) {
+      dispatch(HideLoading());
+      toast.error(error.message);
+    }
+  };
 
+  const deleteStudent = async (rolNo) => {
+    try {
+      dispatch(ShowLoading());
+      const response = await axios.post(
+        `/api/student/delete-student/${rolNo}`,
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+      dispatch(HideLoading());
+      if (response.data.success) {
+        getStudents();
+        toast.success(response.data.message);
+      } else {
+        toast.error(response.data.message);
+      }
+    } catch (error) {
+      dispatch(HideLoading());
+      toast.error(error.message);
+    }
+  };
+
+
+  useEffect(() => {
+    getStudents();
+  }, []);
 
     const columns = [
         {
@@ -47,7 +104,7 @@ export default function Students() {
               <i
                 className="ri-delete-bin-line"
                 onClick={() => {
-                //   deleteStudent(record.rollNo);
+                  deleteStudent(record.rollNo);
                 }}
               ></i>
               <i
