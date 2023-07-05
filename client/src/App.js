@@ -7,6 +7,7 @@ import PublicRoute from './components/PublicRoute';
 import ProtectedRoute from './components/ProtectedRoute';
 import EmployeeHome from './pages/employees/EmployeeHome';
 import Students from './pages/employees/Students';
+import AddStudent from './pages/employees/AddStudent';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/login" element={<PublicRoute><Login /></PublicRoute>}/>
           <Route path="/employee" element={<ProtectedRoute><EmployeeHome /></ProtectedRoute>}/>
           <Route path="/employee/students" element={<ProtectedRoute><Students /></ProtectedRoute>}/>
+          <Route path="/employee/students/add" element={<ProtectedRoute><AddStudent /></ProtectedRoute>}/>
           <Route path="/studentlogin" element={<StudentLogin />}/>
         </Routes>
       </BrowserRouter>
