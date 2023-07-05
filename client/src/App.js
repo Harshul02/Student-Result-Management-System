@@ -8,6 +8,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import EmployeeHome from './pages/employees/EmployeeHome';
 import Students from './pages/employees/Students';
 import AddStudent from './pages/employees/AddStudent';
+import EditStudent from './pages/employees/EditStudent';
 
 function App() {
   return (
