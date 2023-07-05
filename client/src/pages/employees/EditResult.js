@@ -157,39 +157,36 @@ function ResultInfo() {
       <PageTitle title="Result Info" />
       {result && (
         <>
-          <div className="mt-3">
-            <h1 className="text-small">Name : {result.examination}</h1>
-            <h1 className="text-small">Class : {result.class}</h1>
-            <h1 className="text-small">Date : {result.date}</h1>
+          <div className="mt-3 mx-4">
+            <h1 className="text-medium fs-3">Name : {result.examination}</h1>
+            <h1 className="text-medium fs-3">Class : {result.class}</h1>
+            <h1 className="text-medium fs-3">Date : {result.date}</h1>
           </div>
           <hr />
           {!selectedStudent ? (
-            <h1
-              className="underline cursor-pointer text-medium"
+            <button
+              className="btn btn-primary text-white px-3 mx-4"
               onClick={() => {
                 setShowStudentsModal(true);
               }}
             >
               Add Student
-            </h1>
+            </button>
           ) : (
             <>
-              <div className="d-flex justify-content-between align-items-center card flex-row p-2">
-                <h1 className="text-small">
+              <div className="d-flex justify-content-between align-items-center card flex-row p-2 mx-3">
+                <h1 className="text-medium fs-3">
                   Student Name : {selectedStudent?.firstName}{" "}
                   {selectedStudent?.lastName}
                 </h1>
-                <i
-                  className="ri-close-line"
-                  onClick={() => {
+                <button type="button" class="btn-close" aria-label="Close" onClick={() => {
                     const tempObtainedMarks = {};
                     result.subjects.forEach((subject) => {
                       tempObtainedMarks[subject.name] = 0;
                     });
                     setObtainedMarks(tempObtainedMarks);
                     setSelectedStudent(null);
-                  }}
-                ></i>
+                  }}></button>
               </div>
 
               <table className="table">
@@ -208,7 +205,7 @@ function ResultInfo() {
                       <td>
                         <input
                           type="text"
-                          className="w-110"
+                          className="w-25 form-control"
                           value={obtainedMarks[subject?.name]}
                           onChange={(e) => {
                             const tempObtainedMarks = { ...obtainedMarks };
@@ -225,7 +222,7 @@ function ResultInfo() {
 
               <button
                 onClick={saveStudentResult}
-                className="primary px-5 text-white"
+                className="btn btn-primary primary px-5 text-white mb-4 mx-3"
               >
                 SAVE
               </button>

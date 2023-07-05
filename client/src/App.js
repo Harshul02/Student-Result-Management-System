@@ -11,6 +11,7 @@ import AddStudent from './pages/employees/AddStudent';
 import EditStudent from './pages/employees/EditStudent';
 import Results from './pages/employees/Results';
 import AddResult from './pages/employees/AddResult';
+import EditResult from './pages/employees/EditResult';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/employee/students/edit/:rollNo" element={<ProtectedRoute><EditStudent /></ProtectedRoute>}/>
           <Route path="/employee/results" element={<ProtectedRoute><Results /></ProtectedRoute>}/>
           <Route path="/employee/results/add" element={<ProtectedRoute><AddResult /></ProtectedRoute>}/>
+          <Route path="/employee/results/edit/:resultId" element={<ProtectedRoute><EditResult /></ProtectedRoute>}/>
           <Route path="/studentlogin" element={<StudentLogin />}/>
         </Routes>
       </BrowserRouter>
