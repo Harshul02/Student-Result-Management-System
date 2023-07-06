@@ -84,10 +84,10 @@ function ResultCheck() {
   return (
     <>
     <div className="p-5">
-      <div className="header d-flex justify-content-between align-items-center bg-primary">
-        <h1 className="text-white">
+      <div className="header d-flex justify-content-between align-items-center py-2 bg-primary" style={{borderRadius: "5px"}}>
+        <h1 className="text-white fs-1 mx-2">
           {" "}
-          <b className="secondary-text">My</b> RESULTS{" "}
+          MyRESULTS{" "}
         </h1>
         <div>
           {/* <h1
@@ -103,8 +103,8 @@ function ResultCheck() {
 
       {result && (
         <div className="mt-3 p-3 card">
-          <h1 className="text-small">Examination : {result.examination}</h1>
-          <h1 className="text-small">Class : {result.class}</h1>
+          <h1 className="text-sm fs-4">Examination : {result.examination}</h1>
+          <h1 className="text-sm fs-4">Class : {result.class}</h1>
         </div>
       )}
       <hr />
@@ -112,13 +112,13 @@ function ResultCheck() {
         <input
           type="text"
           placeholder="Roll No"
-          className="w-300"
+          className="w-25 form-control"
           value={rollNo}
           onChange={(e) => setRollNo(e.target.value)}
         />
 
         <button
-          className="primary px-5 text-white"
+          className="btn btn-primary primary px-5 text-white"
           onClick={() => {
             getStudentResult();
           }}
@@ -130,7 +130,7 @@ function ResultCheck() {
       {studentResult && (
         <div className="card p-3">
           <div>
-            <h1 className="text-medium ">
+            <h1 className="text-md fs-2">
               <b>
                 Name : {studentResult.firstName} {studentResult.lastName}
               </b>
@@ -163,7 +163,7 @@ function ResultCheck() {
             }}
             className="p-3 w-50"
           >
-            <h1 className="text-white text-center text-medium">
+            <h1 className="text-white text-center text-md fs-3">
               Percentage : {getPercenatge().toFixed(2)} % , Verdict :{" "}
               {studentResult?.verdict?.toUpperCase()}
             </h1>

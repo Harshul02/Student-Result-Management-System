@@ -6,6 +6,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
 // import { ShowLoading, HideLoading } from "../";
+import "./student.css"
 
 function Home() {
   const dispatch = useDispatch();
@@ -43,7 +44,7 @@ function Home() {
 
   return (
     <div className="p-5">
-      <div className="header d-flex justify-content-between align-items-center py-2 bg-primary" style={{borderRadius: "10px"}}>
+      <div className="header d-flex justify-content-between align-items-center py-2 bg-primary" style={{borderRadius: "5px"}}>
         <h1 className="text-white fs-1 mx-2">
           {" "}
           MyRESULTS{" "}
@@ -74,7 +75,7 @@ function Home() {
             return (
               <Col span={8}>
                 <div
-                  className="card p-2 cursor-pointer primary-border"
+                  className="card p-2 cursor-pointer primary-border cardcrs"
                   onClick={() => {
                     navigate(`/result/${result._id}`);
                   }}
