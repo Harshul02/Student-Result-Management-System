@@ -3,7 +3,7 @@ import PageTitle from "../../components/PageTitle";
 import { useNavigate } from "react-router-dom";
 import { Table } from "antd";
 import axios from "axios";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { HideLoading, ShowLoading } from "../../redux/alerts";
 import { RiDeleteBinLine, RiPencilLine } from 'react-icons/ri';
@@ -108,6 +108,8 @@ function Results() {
     },
   ];
   return (
+    <>
+    <Toaster />
     <div>
       <PageTitle title="Results" />
       <div className="d-flex justify-content-between align-items-center my-3 mx-3">
@@ -130,6 +132,7 @@ function Results() {
       <Table columns={columns} dataSource={results} />
       </div>
     </div>
+    </>
   );
 }
 

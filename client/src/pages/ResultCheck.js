@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
 import axios from "axios";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { HideLoading, ShowLoading } from "../redux/alerts";
-import NavBar from "../components/NavBar";
 function ResultCheck() {
   const navigate = useNavigate()
   const [rollNo, setRollNo] = React.useState("");
@@ -83,6 +82,7 @@ function ResultCheck() {
   };
   return (
     <>
+    <Toaster />
     <div className="p-5">
       <div className="header d-flex justify-content-between align-items-center py-2 bg-primary" style={{borderRadius: "5px"}}>
         <h1 className="text-white fs-1 mx-2">

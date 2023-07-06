@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Col, Row, Table } from "antd";
 import axios from "axios";
-import toast from "react-hot-toast";
+import toast,{ Toaster } from "react-hot-toast";
 import { useDispatch } from "react-redux";
 // import { ShowLoading, HideLoading } from "../";
 import "./student.css"
@@ -43,6 +43,8 @@ function Home() {
   }, []);
 
   return (
+    <>
+    <Toaster />
     <div className="p-5">
       <div className="header d-flex justify-content-between align-items-center py-2 bg-primary" style={{borderRadius: "5px"}}>
         <h1 className="text-white fs-1 mx-2">
@@ -64,7 +66,7 @@ function Home() {
       {results.length > 0 ? (
         <Row gutter={[20, 20]}>
           <Col span={24}>
-            <h1 className="text-lg my-3 fs-2">Welcome to My RESULTS </h1>
+            <h1 className="text-lg my-3 fs-2 mt-4">Welcome to MyRESULTS </h1>
             <h1 className="text-md my-3 fs-3" style={{fontFamily: "cursive"}}>
               Select Your Examination From Below..{" "}
             </h1>
@@ -94,6 +96,7 @@ function Home() {
         </div>
       )}
     </div>
+    </>
   );
 }
 

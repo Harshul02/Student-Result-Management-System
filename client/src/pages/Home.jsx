@@ -19,7 +19,7 @@ export default function Home() {
       }}
     >
     <div className="position-absolute top-0 start-0 p-4 text-white">
-            <h1 className="text-medium">Graphic Era (Deemed To Be) University</h1>
+            <h1 className="text-medium">Graphic Era Global School</h1>
           </div>
       <div className="container">
         <div className="row justify-content-between">
@@ -42,7 +42,7 @@ export default function Home() {
                 style={{ maxWidth: '80%', maxHeight: '80%', objectFit: 'contain' }}
               />
               <div className="card-body text-center">
-                <h2 className="card-title">Student Login</h2>
+                <h2 className="card-title">Student</h2>
               </div>
             </div>
           </div>
@@ -65,7 +65,7 @@ export default function Home() {
                 style={{ maxWidth: '80%', maxHeight: '80%', objectFit: 'contain' }}
               />
               <div className="card-body text-center">
-                <h2 className="card-title">Admin Login</h2>
+                <h2 className="card-title">Admin</h2>
               </div>
             </div>
           </div>

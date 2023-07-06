@@ -3,7 +3,7 @@ import PageTitle from "../../components/PageTitle";
 import { useNavigate } from "react-router-dom";
 import { Table } from "antd";
 import axios from "axios";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { HideLoading, ShowLoading } from "../../redux/alerts";
 
@@ -43,10 +43,13 @@ function EditStudent() {
   }, []);
   const params = useParams();
   return (
+    <>
+    <Toaster />
     <div>
       <PageTitle title="Edit Student" />
       {student && <StudentForm student={student} type="edit" />}
     </div>
+    </>
   );
 }
 

@@ -3,7 +3,7 @@ import PageTitle from "../../components/PageTitle";
 import { useNavigate } from "react-router-dom";
 import { Modal, Table } from "antd";
 import axios from "axios";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { HideLoading, ShowLoading } from "../../redux/alerts";
 
@@ -153,6 +153,8 @@ function ResultInfo() {
   }, [result]);
 
   return (
+    <>
+    <Toaster />
     <div>
       <PageTitle title="Result Info" />
       {result && (
@@ -258,6 +260,7 @@ function ResultInfo() {
         />
       </Modal>
     </div>
+    </>
   );
 }
 
