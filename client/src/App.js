@@ -13,6 +13,7 @@ import Results from './pages/employees/Results';
 import AddResult from './pages/employees/AddResult';
 import EditResult from './pages/employees/EditResult';
 import ResultCheck from './pages/ResultCheck';
+import Student from './pages/students/Student';
 
 function App() {
   return (
@@ -29,7 +30,7 @@ function App() {
           <Route path="/employee/results" element={<ProtectedRoute><Results /></ProtectedRoute>}/>
           <Route path="/employee/results/add" element={<ProtectedRoute><AddResult /></ProtectedRoute>}/>
           <Route path="/employee/results/edit/:resultId" element={<ProtectedRoute><EditResult /></ProtectedRoute>}/>
-          <Route path="/studentlogin" element={<StudentLogin />}/>
+          <Route path="/student" element={<Student />}/>
         </Routes>
       </BrowserRouter>
     </div>

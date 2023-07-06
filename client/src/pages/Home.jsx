@@ -32,7 +32,7 @@ export default function Home() {
                 backgroundColor: 'rgba(255, 255, 255, 0.8)', // Adjust the transparency as desired
               }}
               onClick={()=>{
-                navigate("/studentlogin")
+                navigate("/student")
               }}
             >
               <img

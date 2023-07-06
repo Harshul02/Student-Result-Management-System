@@ -90,14 +90,14 @@ function ResultCheck() {
           <b className="secondary-text">My</b> RESULTS{" "}
         </h1>
         <div>
-          <h1
+          {/* <h1
             className="text-white text-small cursor-pointer underline"
             onClick={() => {
               navigate("/login");
             }}
           >
             Login
-          </h1>
+          </h1> */}
         </div>
       </div>
 
