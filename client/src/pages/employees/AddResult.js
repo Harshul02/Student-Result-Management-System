@@ -11,4 +11,4 @@ function AddResult() {
   )
 }
 
-export default AddResult
+export default AddResult;
