@@ -32,7 +32,7 @@ export default function NavBar(props) {
     <nav class="navbar navbar-expand-lg bg-primary">
       <div class="container-fluid">
         <span className="navbar-brand mb-0 h1 text-white mx-2">
-          Graphic Era (Deemed To Be) University
+          Graphic Era Global School
         </span>
         <button
           class="navbar-toggler"

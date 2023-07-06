@@ -47,7 +47,7 @@ function Login() {
       >
         <div className="d-flex align-items-center">
           <div className="position-absolute top-0 start-0 p-4 text-white">
-            <h1 className="text-medium">Graphic Era (Deemed To Be) University</h1>
+            <h1 className="text-medium">Graphic Era Global School</h1>
           </div>
           <Form layout="vertical w-400 white p-4 mx-5" className="" style={{ border: "1px solid #0000FF", background: "rgba(0, 0, 0, 0.6)", height: "450px", width: "270px"}} onFinish={onFinish}>
             <hr style={{color: "#46c1dc"}}/>
