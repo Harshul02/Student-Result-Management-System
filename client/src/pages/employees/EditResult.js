@@ -158,9 +158,9 @@ function ResultInfo() {
       {result && (
         <>
           <div className="mt-3 mx-4">
-            <h1 className="text-medium fs-3">Name : {result.examination}</h1>
-            <h1 className="text-medium fs-3">Class : {result.class}</h1>
-            <h1 className="text-medium fs-3">Date : {result.date}</h1>
+            <h1 className="text-md fs-4">Name : {result.examination}</h1>
+            <h1 className="text-medium fs-4">Class : {result.class}</h1>
+            <h1 className="text-medium fs-4">Date : {result.date}</h1>
           </div>
           <hr />
           {!selectedStudent ? (
