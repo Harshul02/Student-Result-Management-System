@@ -6,13 +6,7 @@ var cors = require('cors');
 require("dotenv").config();
 const dbConfig = require("./config/db");
 app.use(express.json());
-app.use(
-    cors({
-      origin: 'https://master--curious-torrone-90a806.netlify.app/',
-      methods: ['GET', 'POST'], 
-      allowedHeaders: ['Content-Type', 'Authorization'],
-    })
-  );
+app.use(cors());
 
 const employeeRoute = require("./routes/employeeRoute");
 const studentRoute = require("./routes/studentRoute");
