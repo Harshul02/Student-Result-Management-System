@@ -16,7 +16,7 @@ function Home() {
     try {
     //   dispatch(ShowLoading());
       const response = await axios.post(
-        "/api/results/get-all-results",
+        "https://student-result-api.onrender.com/api/results/get-all-results",
         {},
         {
           headers: {
