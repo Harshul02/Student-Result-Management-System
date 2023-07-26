@@ -17,7 +17,7 @@ function Results() {
     try {
       dispatch(ShowLoading());
       const response = await axios.post(
-        "/api/results/get-all-results",
+        `${process.env.REACT_APP_API}/api/results/get-all-results`,
         {},
         {
           headers: {
@@ -42,7 +42,7 @@ function Results() {
       dispatch(ShowLoading());
       console.log(rolNo);
       const response = await axios.post(
-        `/api/student/delete-student/${rolNo}`,
+        `${process.env.REACT_APP_API}/api/student/delete-student/${rolNo}`,
         {},
         {
           headers: {

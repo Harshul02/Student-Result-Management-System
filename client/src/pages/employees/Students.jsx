@@ -17,7 +17,7 @@ export default function Students() {
     try {
       dispatch(ShowLoading());
       const response = await axios.post(
-        "/api/student/get-all-students",
+        `${process.env.REACT_APP_API}/api/student/get-all-students`,
         {},
         {
           headers: {
@@ -42,7 +42,7 @@ export default function Students() {
     try {
       dispatch(ShowLoading());
       const response = await axios.post(
-        `/api/student/delete-student/${rolNo}`,
+        `${process.env.REACT_APP_API}/api/student/delete-student/${rolNo}`,
         {},
         {
           headers: {

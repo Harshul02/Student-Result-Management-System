@@ -18,7 +18,7 @@ function EditStudent() {
     try {
       dispatch(ShowLoading());
       const response = await axios.post(
-        `/api/student/get-student/${params.rollNo}`,
+        `${process.env.REACT_APP_API}/api/student/get-student/${params.rollNo}`,
         {},
         {
           headers: {

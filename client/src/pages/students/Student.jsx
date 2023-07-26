@@ -13,10 +13,11 @@ function Home() {
   const [results, setResults] = React.useState([]);
   const navigate = useNavigate();
   const getResults = async (values) => {
+    console.log(process.env.REACT_APP_API);
     try {
     //   dispatch(ShowLoading());
       const response = await axios.post(
-        "https://student-result-api.onrender.com/api/results/get-all-results",
+        `${process.env.REACT_APP_API}/api/results/get-all-results`,
         {},
         {
           headers: {

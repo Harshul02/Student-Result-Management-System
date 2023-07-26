@@ -15,7 +15,7 @@ function ResultCheck() {
     try {
       dispatch(ShowLoading());
       const response = await axios.post(
-        `/api/results/get-result/${params.resultId}`,
+        `${process.env.REACT_APP_API}/api/results/get-result/${params.resultId}`,
         {},
         {
           headers: {
@@ -39,7 +39,7 @@ function ResultCheck() {
     try {
       dispatch(ShowLoading());
       const response = await axios.post(
-        `/api/results/get-student-result`,
+        `${process.env.REACT_APP_API}/api/results/get-student-result`,
         {
           rollNo: rollNo,
           resultId: params.resultId,

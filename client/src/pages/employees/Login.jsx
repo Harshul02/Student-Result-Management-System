@@ -14,7 +14,7 @@ function Login() {
     const onFinish = async (values) =>{
         try{
             dispatch(ShowLoading());
-            const response = await axios.post("/api/employee/login", values);
+            const response = await axios.post(`${process.env.REACT_APP_API}/api/employee/login`, values);
             dispatch(HideLoading());
             if(response.data.success)
             {
