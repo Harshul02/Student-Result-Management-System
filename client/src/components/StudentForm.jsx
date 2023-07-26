@@ -72,7 +72,7 @@ function StudentForm({ student, type }) {
           </Col>
           <Col span={8}>
             <Form.Item label="Class" name="class">
-              <input type="number" className="form-control form-control-xs" style={{ border: '1px solid black', width: "210px" }} />
+              <input type="number" className="form-control form-control-xs" style={{ border: '1px solid black', width: "210px" }} required/>
             </Form.Item>
           </Col>
         </Row>
