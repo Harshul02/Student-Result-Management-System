@@ -51,6 +51,7 @@ router.post("/get-all-results", async (req, res) => {
 router.post("/get-result/:resultId", async (req, res) => {
   try {
     const result = await Result.findById(req.params.resultId);
+    console.log(result);
     res.status(200).send({
       message: "Result retrieved successfully",
       success: true,
@@ -131,6 +132,7 @@ router.post("/get-student-result", async (req, res) => {
     const resultExists = student.results.find(
       (result) => result.resultId === req.body.resultId
     );
+    console.log(resultExists);
     if (!resultExists) {
       return res.status(200).send({
         message: "Result not found",

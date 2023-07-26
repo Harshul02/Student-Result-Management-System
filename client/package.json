@@ -42,7 +42,7 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:5000/",
+  "proxy": "https://student-result-api.onrender.com",
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   }
