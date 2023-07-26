@@ -40,6 +40,7 @@ function Results() {
   const deleteStudent = async (rolNo) => {
     try {
       dispatch(ShowLoading());
+      console.log(rolNo);
       const response = await axios.post(
         `/api/student/delete-student/${rolNo}`,
         {},
